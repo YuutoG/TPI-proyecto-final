@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href= "{% static 'css/nav.css' %}"/>
+	<title>Mis fotos</title>
+</head>
+<body>
+	 <nav style="margin-bottom: 25px">
+      <div class="logo">
+        <a href="/inicio"> 
+          <img src="{% static 'img/logo1.jpeg' %}" style="width: 115px; height: 70px; margin-top: 10px" /></div>
+        </a>  
+      <ul style="margin-top: 10px">
+        <li><a href="/inicio">Inicio</a></li>
+        <li><a href="/profile">Mis fotos</a><li>
+        <li><a href="/upload">Subir fotos</a><li>
+        <li><a href="#">Favoritos</a></li>
+        <li><a href="#">Ver mas tarde</a></li>
+        <li><a href="/logout" style="margin-left: 30px">Salir</a></li>
+      </ul>
+    </nav>
+	<h1>This is my profile</h1>
+	{% for i in imagenes %}
+
+	<img class="imag" src="{{request.user.i.imagen.url}}" style="width:300px;">
+	{% endfor %}
+	<!-- Footer -->
+          <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
+              <br>
+              <br>
+                <p>&copy; Post It | 2021</p>
+              <br>
+              <br>
+          </footer>
+</body>
+</html>

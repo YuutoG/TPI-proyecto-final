@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Post It</title>
+		<meta name="author" content="Grupo-13-Tpi">
+	    <meta name=" keywords " content=" Post It, post it, Post It El Salvador, fotografias post it, post it fotos">
+	    <meta name=" description " content="Descubre ideas e inspirate, que tus mejores fotografias no se pierdan.">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<script type="application/ld+json"> 
+				{
+	  			"@context": "https://schema.org",
+	  			"url": "https://tallernvs.cc", 
+	  			"logo": "https://tallernvs.cc/static/images/logo.png"
+				}
+		</script>
+	    <meta name="title" content="Post It | El Salvador">
+	    <meta name="language" content="Spanish">
+	    <meta name="Geography" content="El Salvador">
+	    <meta name="Country" content="El Salvador">
+	    <meta name="City" content="San Salvador">
+	    <meta name="Copyright" content=""> <!-- aqui iria el dominio en las comillas -->
+	    <meta name="Designer" content="Post It.">
+	    <meta name="Publisher" content="Post_It_Project">
+	    <meta http-equiv="expires" content="0">
+	    <meta http-equiv="cache-control" content="public">
+
+	     <!-- Google / Search Engine Tags -->
+	    <meta itemprop="name" content="Post It.">
+	    <meta itemprop="description" content="Descubre ideas e inspirate, que tus mejores fotografias no se pierdan.">
+	    <meta itemprop="image" content="https://tallernvs.cc/images/logo.png"> <!--cambiar esto-->
+
+		<link rel="stylesheet" href="main.css"> 
+		<link rel="stylesheet" type="text/css" href= "{% static 'css/style3.css' %}"/>
+	</head>
+	<body class="is-preload">
+		<nav style="background-color:#222222; margin-top: -15px; margin-bottom: 25px">
+			<br>
+			<br>
+	       <div class="logo">
+          	<a class="logo" href="/"><img  src="{% static 'img/logo1.jpeg' %}"/></a>
+        </div> 
+	      <ul style="margin-top: 20px">
+	      	<li><a href="/login" class="button next scrolly">Login</a><li> &nbsp;&nbsp;&nbsp;&nbsp;
+	      	<li><a href="/signup" class="button next scrolly">Signup</a></li>
+	      </ul>
+	      	<br>
+	      	<br>
+    	</nav>
+
+			<div id="wrapper">
+				<!-- titulo -->
+					<section id="titulo" class="titulo" style="color: #FFFF; text-align: center;">
+						<div class="inner">
+							<header class="titulo">
+							<br>
+							<br>
+								<h1>Post It!</h1>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<h2>Share the moment.</h2>
+								&nbsp;&nbsp;&nbsp;&nbsp;
+								<hr style=" height: 1px; border-color: #FFFF; width:50%; margin-left: 25%">
+								&nbsp;&nbsp;&nbsp;&nbsp;
+							</header>
+							<div class="content">
+								<p>Don't miss your best photos.</p>
+								<p>Platform where you can save and share your photos with the rest of the world.</p>
+								<br>
+								<br>
+								<br>
+								<br>
+							</div>
+						</div>
+					</section>
+					<div id="main">
+							<section id="one" class="tiles" style="margin-left: 65px">
+								<article>
+									<span class="image">
+										<img src="{% static 'img/img09.jpg' %}"/>
+									</span>
+								</article>
+								<article>
+									<span class="image">
+										<img src="{% static 'img/img10.jpg' %}"/>
+									</span>
+								</article>
+								<article>
+									<span class="image">
+										<img src="{% static 'img/img12.jpeg' %}"/>
+									</span>
+								</article>
+								<article>
+									<span class="image">
+										<img src="{% static 'img/img11.jpg' %}"/>
+									</span>
+								</article>
+								<article>
+									<span class="image">
+										<img src="{% static 'img/img06.jpeg' %}"/>
+									</span>
+								</article>
+								<article>
+									<span class="image">
+										<img src="{% static 'img/img13.jpeg' %}"/>
+									</span>
+								</article>
+							</section>
+					</div>
+					<br>
+					<br>
+
+					<!-- Footer -->
+					<footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
+							<br>
+							<br>
+								<p>&copy; Post It | 2021</p>
+							<br>
+							<br>
+					</footer>
+			</div>
+			<!-- Scripts -->
+			<script src = "static/js/jquery.min.js"></script>
+			<script src = "static/js/jquery.scrolly.min.js"></script>
+			<script src = "static/js/browser.min.js"></script>
+			<script src = "static/js/breakpoints.min.js"></script>
+			<script src = "static/js/main.js"></script>
+	</body>
+</html>
