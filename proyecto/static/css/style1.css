@@ -1,0 +1,131 @@
+*{box-sizing:border-box;}
+
+body {
+    background: #181818;
+    color: #fff;
+    line-height: 1.6;
+    font-family: 'Quicksand', sans-serif;
+    padding: 0 1.5em;
+}
+
+form{
+	width:300px;
+	padding:16px;
+	border-radius:10px;
+	margin:auto;
+	background-color:#222222;
+	box-shadow: 0 0 20px 0 rgba(255, 255, 255, .1);
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+	display:inline-block;
+}
+
+form input[type="text"],
+form input[type="email"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #012583;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#012583;
+} 
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;			
+	margin:8px 0;
+	resize:none;
+	display:block;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+  background: #1b1b1b;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav .logo{
+  float: left;
+  color: white;
+  font-size: 65px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+}
+nav ul{
+  float: right;
+  margin-right: 50px;
+  list-style: none;
+  position: relative;
+}
+nav ul li{
+  float: left;
+  display: inline-block;
+  background: #1b1b1b;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color: #0342e7;
+  border-radius: 5px;
+  box-shadow:  0 0 5px #0d47fc,
+               0 0 10px #0d47fc;
+}
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid #0342e7;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+header{
+  font-size: 25px;
+  font-weight: 600;
+  padding: 10px 0;
+}
+.name{
+  margin-left: 40px;
+  color: #1a5bc1;
+  text-shadow: -3px 3px #ffffff, -3px -3px #ffffff, 3px -3px #ffffff, 3px 3px #f3f3f2, 6px 6px #1ac1a1;
+  }
+.logo img{
+
+    width: 115px; 
+    height: 70px; 
+    margin-top: 10px;
+}

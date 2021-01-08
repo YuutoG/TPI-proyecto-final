@@ -5,27 +5,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href= "{% static 'css/nav.css' %}"/>
+    <link rel="stylesheet" type="text/css" href= "{% static 'css/galeria.css' %}"/>
     <title>Inicio</title>
   </head>
   <body>
      <nav style="margin-bottom: 25px">
       <div class="logo">
         <a href="/inicio"> 
-          <img src="{% static 'img/logo1.jpeg' %}" style="width: 115px; height: 70px; margin-top: 10px" /></div>
+          <img class="logopic" src="{% static 'img/logo1.jpeg' %}" style="text-align: center;" /></div>
         </a>  
-      <ul style="margin-top: 10px">
+      <ul style="margin-top: 10px; margin-bottom: 20px;">
         <li><a href="/inicio">Inicio</a></li>
         <li><a href="/profile">Mis fotos</a><li>
         <li><a href="/upload">Subir fotos</a><li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Ver mas tarde</a></li>
-        <li><a href="/logout" style="margin-left: 30px">Salir</a></li>
+        <li><a href="/favoritos">Favoritos</a></li>
+        <li><a href="/VerMasTarde">Ver mas tarde</a></li>
+        <li><a href="/logout" style="margin-left: 30px;">Salir</a></li>
       </ul>
     </nav>
   <div class="nombre">  
     <h1 class="name">Hola {{request.user.username}}!</h1>
+ </div>
+ <br>
+ <form method="get" action="{% url 'viewBusqueda' %}" style="margin-left: 50px">{% csrf_token %}
+      <input type="input" name="idImagen">
+       <input type="submit" class="text-favorito" name="boton" value="Buscar">
+     </form>
+   <form method="Post" action="{% url 'viewTarde' %}" >{% csrf_token %}
+ <br>
+ <br>
+ <br>
+ <div class="outc">
+  {% for i in imagenes %}
+<div class="container">
+  <div class="galery">
+    <img class="image" src="{{i.imagen.url}}"  >
+  </div>    
+    <div class="middle">
+      <h3>{{i.titulo}}</h3>
+      <p>{{i.descripcion}}</p>
+     <br>
+     <form method="Post" action="{% url 'viewFavorito' %}" >{% csrf_token %}
+      <input type="hidden" name="idImagen" value="{{i.id}}">
+       <input type="submit" class="text-favorito" name="boton" value="Favorito">
+     </form>
+   <form method="Post" action="{% url 'viewTarde' %}" >{% csrf_token %}
+
+      <input type="hidden" name="idImagen" value="{{i.id}}">
+       <input type="submit" class="text-tarde" name="boton" value="Ver Mas Tarde">
+     </form>
+  <br>
+  {% ifequal user.username i.user.username %}
+  <br>
+
+  <br>
+
+
+      <form method="Post" action="{% url 'viewEliminarImagen' %}" >{% csrf_token %}
+      <input type="hidden" name="idImagen" value="{{i.id}}">
+       <input type="submit" class="text-eliminar" name="boton" value="Eliminar">
+     </form>
+   {% endifequal %} 
+    </div>
   </div>
+  {% endfor %}
+</div>
+<br>
+<br>
   <!-- Footer -->
           <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
               <br>

@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href= "{% static 'css/galeria.css' %}"/>
+	<title>Mis fotos</title>
+</head>
+<body>
+	 <nav style="margin-bottom: 25px">
+      <div class="logo">
+        <a href="/inicio"> 
+          <img src="{% static 'img/logo1.jpeg' %}" style="width: 115px; height: 70px; margin-top: 10px" /></div>
+        </a>  
+      <ul style="margin-top: 10px">
+        <li><a href="/inicio">Inicio</a></li>
+        <li><a href="/profile">Mis fotos</a><li>
+        <li><a href="/upload">Subir fotos</a><li>
+         <li><a href="/favoritos">Favoritos</a></li>
+        <li><a href="/VerMasTarde">Ver mas tarde</a></li>
+        <li><a href="/logout" style="margin-left: 30px">Salir</a></li>
+      </ul>
+    </nav>
+     <div class="nombre">  
+    <h1 class="name">Favoritos</h1>
+ </div>
+<br>
+<br>
+	{% for i in imagenes %}
+<div class="container">
+  <img class="image" src="{{i.idImagen.imagen.url}}" style="width: 390px;height: 450px;" >
+    
+  <div class="middle">
+    <h3>{{i.idImagen.titulo}}</h3>
+    <p>{{i.idImagen.descripcion}}</p>
+
+   <br>
+  
+    <form method="Post" action="{% url 'viewEliminarFavorito' %}" >{% csrf_token %}
+
+    <input type="hidden" name="idImagen" value="{{i.id}}">
+     <input type="submit" class="text-eliminar" name="boton" value="Eliminar de Favoritos">
+   </form>
+ 
+  </div>
+  </div>
+  {% endfor %}
+
+
+
+
+
+	<!-- Footer -->
+          <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
+              <br>
+              <br>
+                <p>&copy; Post It | 2021</p>
+              <br>
+              <br>
+          </footer>
+</body>
+</html>

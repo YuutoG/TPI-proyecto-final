@@ -28,8 +28,7 @@ SECRET_KEY = 'l7!tp*1y4qlv9_0u-m6e&yi#3&_(5lfilydkj^%xt#ny8v2365'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['159.65.110.160','.i-postit.tk','localhost']
 
 # Application definition
 
@@ -130,6 +129,7 @@ STATICFILES_DIRS = [
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 

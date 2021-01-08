@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href= "{% static 'css/galeria.css' %}"/>
+	<title>Mis fotos</title>
+</head>
+<body>
+	 <nav style="margin-bottom: 25px">
+      <div class="logo">
+        <a href="/inicio"> 
+          <img src="{% static 'img/logo1.jpeg' %}" style="width: 115px; height: 70px; margin-top: 10px" /></div>
+        </a>  
+      <ul style="margin-top: 10px">
+        <li><a href="/inicio">Inicio</a></li>
+        <li><a href="/profile">Mis fotos</a><li>
+        <li><a href="/upload">Subir fotos</a><li>
+        <li><a href="/favoritos">Favoritos</a></li>
+        <li><a href="/VerMasTarde">Ver mas tarde</a></li>
+        <li><a href="/logout" style="margin-left: 30px">Salir</a></li>
+      </ul>
+    </nav>
+<div class="nombre">  
+    <h1 class="name">Mis contribuciones</h1>
+ </div>
+<br>
+<br>
+<br>
+ <div class="outc">
+  {% for i in imagenes %}
+<div class="container">
+  <img class="image" src="{{i.imagen.url}}" >
+    
+  <div class="middle">
+    <h3>{{i.titulo}}</h3>
+    <p>{{i.descripcion}}</p>
+
+   <br>
+   
+{% ifequal user.username i.user.username %}
+
+<br>
+    <br>
+    <form method="Post" action="{% url 'viewEliminarImagen' %}" >{% csrf_token %}
+
+    <input type="hidden" name="idImagen" value="{{i.id}}">
+     <input type="submit" class="text-eliminar" name="boton" value="Eliminar">
+   </form>
+ {% endifequal %} 
+
+  </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+	<!-- Footer -->
+          <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
+              <br>
+              <br>
+                <p>&copy; Post It | 2021</p>
+              <br>
+              <br>
+          </footer>
+</body>
+</html>

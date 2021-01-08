@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href= "{% static 'css/nav.css' %}"/>
-	<title>Mis fotos</title>
+	<link rel="stylesheet" type="text/css" href= "{% static 'css/galeria.css' %}"/>
+	<title>Ver mas tarde</title>
 </head>
 <body>
 	 <nav style="margin-bottom: 25px">
@@ -17,16 +17,42 @@
         <li><a href="/inicio">Inicio</a></li>
         <li><a href="/profile">Mis fotos</a><li>
         <li><a href="/upload">Subir fotos</a><li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Ver mas tarde</a></li>
+         <li><a href="/favoritos">Favoritos</a></li>
+        <li><a href="/VerMasTarde">Ver mas tarde</a></li>
         <li><a href="/logout" style="margin-left: 30px">Salir</a></li>
       </ul>
     </nav>
-	<h1>This is my profile</h1>
+<div class="nombre">  
+    <h1 class="name">Lista de ver mas tarde</h1>
+ </div>
+ <br>
+ <br>
+ <br>
+ <div class="outc">
 	{% for i in imagenes %}
+<div class="container">
+  <img class="image" src="{{i.idImagen.imagen.url}}" style="" >
+    
+  <div class="middle">
+    <h3>{{i.idImagen.titulo}}</h3>
+    <p>{{i.idImagen.descripcion}}</p>
 
-	<img class="imag" src="{{request.user.i.imagen.url}}" style="width:300px;">
-	{% endfor %}
+   <br>
+  
+    <form method="Post" action="{% url 'viewEliminarTarde' %}" >{% csrf_token %}
+
+    <input type="hidden" name="idImagen" value="{{i.id}}">
+     <input type="submit" class="text-eliminar" name="boton" value="Eliminar de lista">
+   </form>
+ 
+  </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
 	<!-- Footer -->
           <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
               <br>

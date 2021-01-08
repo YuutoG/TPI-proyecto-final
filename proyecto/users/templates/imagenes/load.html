@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href= "{% static 'css/nav.css' %}"/>
+	<link rel="stylesheet" type="text/css" href= "{% static 'css/load.css' %}"/>
 	<title>Cargar imagen</title>
 </head>
 <body>
@@ -17,8 +17,8 @@
         <li><a href="/inicio">Inicio</a></li>
         <li><a href="/profile">Mis fotos</a><li>
         <li><a href="/upload">Subir fotos</a><li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="#">Ver mas tarde</a></li>
+        <li><a href="/favoritos">Favoritos</a></li>
+        <li><a href="/VerMasTarde">Ver mas tarde</a></li>
         <li><a href="/logout" style="margin-left: 30px">Salir</a></li>
       </ul>
       <br>
@@ -26,24 +26,46 @@
     </nav>
     <br>
     <br>
-	<h1 style="margin-left: 30px">Subir fotografía</h1>
-	<br>
+  <br>
+  <br>
+  <br>
+<div class="fotos">
+
+  <ul>
+    <li>
+      <img src="{% static 'img/img09.jpg' %}" style="width: 500px; height: 333px" /></li>
+    <li>
+
+      <img src="{% static 'img/img10.jpg' %}" style="width: 495px; height: 333px" /></li></li>
+    <li>
+      <img src="{% static 'img/img12.jpeg' %}" style="width: 450px; height: 333px" /></li></li>
+    
+    <li>
+      <img src="{% static 'img/img11.jpg' %}" style="width: 350px; height: 333px" /></li>
+    </li>
+  </ul>
+</div>  
+<div class="formulario"> 
+  <div class="container">
+      <h1 style="margin-left: 30px">Subir fotografía</h1>
+      <br>
+    <form method="POST" enctype="multipart/form-data" style="margin-left: 30px">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input class="btn btn-primary" type="submit" value="Subir">
+    </form>
     <br>
-	<form method="POST" enctype="multipart/form-data" style="margin-left: 30px">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<div>
-		<input type="submit" value="Subir">
-		<br>
-	</div>
-	</form>
+    <br>
+    <br>
+  </div>
+</div>  
 	<!-- Footer -->
-          <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
-              <br>
-              <br>
-                <p>&copy; Post It | 2021</p>
-              <br>
-              <br>
-          </footer>
+    <footer id="footer" style="text-align: center; color: #FFFF; background-color: #222222">
+      <br>
+      <br>
+        <p>&copy; Post It | 2021</p>
+      <br>
+      <br>
+    </footer>
 </body>
 </html>
